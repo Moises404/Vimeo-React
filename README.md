@@ -93,3 +93,5 @@ $ git push heroku master
 └── webpack.config.babel.js   # Webpack configuration
 ```
 
+# Vimeo-React
+VImeo API ReactJS Implementation
