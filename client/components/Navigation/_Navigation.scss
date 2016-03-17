@@ -2,7 +2,7 @@
   position: relative;
   height: $NAV_HEIGHT;
   width: 100%;
-  padding: 0 40px;
+  padding: 8px 40px 0 40px;
   float: left;
   z-index: 99999999;
   background: white;
@@ -10,6 +10,7 @@
   border-bottom-color: 2px solid #0e0e0e;
   background-color: #282828;
 }
+
 .Navigation-ribbon {
   position: absolute;
   top: 0;
@@ -28,12 +29,37 @@
   width: 110px;
   float: left;
   left: -15px;
+
+  a {
+    height: 100%;
+    width: 100%;
+    float: left;
+  }
 }
 
-.Navigation-logo a {
+.Navigation-menu-desktop {
+  position: relative;
+  @include display(flex);
+  @include flex(1 0 0);
+  @include justify-content(space-around);
+  @include align-items(center);
+  margin-right: 30px;
   height: 100%;
-  width: 100%;
-  float: left;
+}
+
+.Navigation-menu-link {
+  display: inline-block;
+  position: relative;
+  font-family: 'Neuzit', Roboto, Helvetica, Arial;
+  color: white;
+  padding: 0 20px;
+
+  &.--active { 
+    font-weight: bolder;
+    background: white;
+    border-radius: 25px;
+    color: black;
+  }
 }
 
 .Navigation-menu-btn {

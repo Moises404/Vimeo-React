@@ -32,7 +32,7 @@ export class App extends Component {
 
   render() {
     const {app, children, layout, actions, client} = this.props
-    const navProps = {actions, client, layout}
+    const navProps = {actions, client, layout, children}
     const childProps = merge(app, client)
     const appClasses = cn('App', `--${client.agent}`)
 

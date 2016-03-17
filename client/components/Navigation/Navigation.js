@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react'
 import Logo from '../Logo/Logo'
 import {Link} from 'react-router'
+import cn from 'classnames'
 
 class Navigation extends React.Component {
   static displayName = 'Navigation'
@@ -9,11 +10,18 @@ class Navigation extends React.Component {
     'actions': PropTypes.object,
     'layout': PropTypes.object,
     'client': PropTypes.object,
-    'db': PropTypes.object,
+    'children': PropTypes.object,
+    'db': PropTypes.object
+  }
+
+  menuActive(linkLocation, currentLocation) {
+    if (linkLocation === currentLocation) {
+      return true
+    }
   }
 
   render() {
-    const {client, actions, layout} = this.props
+    const {client, actions, layout, children} = this.props
     const {agent} = client
 
     const btnProps = {
@@ -26,6 +34,20 @@ class Navigation extends React.Component {
       'onClick': actions.toggleSidebar.bind(this, false),
     }
 
+    const currentLocation = children.props.location.pathname.split('/').pop()
+    console.log(currentLocation)
+    
+    const NavWatchLink = cn('Navigation-menu-link', 
+            {'--active': this.menuActive('watch', currentLocation)})
+    const NavStaffPicksLink = cn('Navigation-menu-link', 
+            {'--active': this.menuActive('staffpicks', currentLocation)})
+    const NavCategoriesLink = cn('Navigation-menu-link', 
+            {'--active': this.menuActive('categories', currentLocation)})
+    const NavChannelsLink = cn('Navigation-menu-link', 
+            {'--active': this.menuActive('channels', currentLocation)})
+    const NavGroupsLink = cn('Navigation-menu-link', 
+            {'--active': this.menuActive('groups', currentLocation)})
+
     return (
       <nav className="Navigation">
         {agent === 'mobile' ? <div {... btnProps} /> : null}
@@ -34,6 +56,13 @@ class Navigation extends React.Component {
           <Link {... logoProps}>
             <Logo />
           </Link>
+        </div>
+        <div className="Navigation-menu-desktop">
+          <Link className={NavWatchLink} to="/watch">Watch</Link>
+          <Link className={NavStaffPicksLink} to="/staffpicks">Staff Picks</Link>
+          <Link className={NavCategoriesLink} to="/categories">Categories</Link>
+          <Link className={NavChannelsLink} to="/channels">Channels</Link>
+          <Link className={NavGroupsLink} to="/groups">Groups</Link>
         </div>
         <a className="Navigation-github" href="https://github.com/Moises404/Vimeo-React" target="_blank">
           <div className="Navigation-github-icn" />
