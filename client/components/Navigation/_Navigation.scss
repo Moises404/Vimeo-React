@@ -2,18 +2,30 @@
   position: relative;
   height: $NAV_HEIGHT;
   width: 100%;
-  border-bottom: 2px solid $borderColor;
   padding: 0 40px;
   float: left;
   z-index: 99999999;
   background: white;
   text-align: center;
+  border-bottom-color: 2px solid #0e0e0e;
+  background-color: #282828;
+}
+.Navigation-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('../images/ribbon_image.png');
+  background-size: 400px;
+  background-position: center;
+  background-repeat: repeat;
+  width: 100%;
+  height: 8px;
 }
 
 .Navigation-logo,  {
   position: relative;
   height: $NAV_HEIGHT;
-  width: 150px;
+  width: 110px;
   float: left;
   left: -15px;
 }

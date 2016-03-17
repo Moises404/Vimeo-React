@@ -29,12 +29,13 @@ class Navigation extends React.Component {
     return (
       <nav className="Navigation">
         {agent === 'mobile' ? <div {... btnProps} /> : null}
+        <div className="Navigation-ribbon"></div>
         <div className="Navigation-logo">
           <Link {... logoProps}>
             <Logo />
           </Link>
         </div>
-        <a className="Navigation-github" href="http://github.com/art404/isoboiler404" target="_blank">
+        <a className="Navigation-github" href="https://github.com/Moises404/Vimeo-React" target="_blank">
           <div className="Navigation-github-icn" />
         </a>
       </nav>
