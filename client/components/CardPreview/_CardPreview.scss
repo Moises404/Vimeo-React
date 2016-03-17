@@ -1,0 +1,91 @@
+.CardPreview {
+	margin: 0 auto;
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(flex-start);
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.CardPreview-Video {
+	@include display(flex);
+	@include justify-content(center);
+	@include align-items(center);
+	position: relative;
+	z-index: 10;
+	width: 100%;
+	height: 395px;
+
+	&:hover { cursor: pointer; }
+
+	video {
+		position: relative;
+		width: auto;
+		height: 85%;
+		z-index: 10;
+
+		&:hover {
+			box-shadow: 0 0 3px rgba(0,0,0,.55);
+			-webkit-transform: scale(1.02,1.02);
+			transform: scale(1.02,1.02);
+		}
+	}
+}
+
+.CardPreview-info {
+	@include display(flex);
+	@include flex-direction(column);
+	@include flex(1 0 0);
+	@include align-items(center);
+	@include justify-content(flex-start);
+	width: 100%;
+	background: rgba(0,0,0,.75);
+	z-index: 10;
+}
+
+.CardPreview-header {
+	@include display(flex);
+	@include justify-content(center);
+	@include align-items(center);
+	font-size: 1.2em;
+	height: 40px;
+	width: 100%;
+	color: #ABABAB;
+	&:hover { cursor: default;}
+}
+.CardPreview-title {
+	display: inline-block;
+	color: white;
+	font-size: 2.1em;
+	font-weight: bolder;
+
+	&:hover {
+		cursor: pointer;
+		color: #44BBFF
+	}
+}
+.CardPreview-user-info {
+	@include display(flex);
+	@include justify-content(center);
+	color: white;
+	font-size: 1em;
+}
+.CardPreview-username {
+	color: #44BBFF;
+	font-weight: bolder;
+	margin-left: 5px;
+
+	&:hover { 
+		color: #11a8ff;
+		cursor: pointer;
+	}
+}
+.CardPreview-background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: gray;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}

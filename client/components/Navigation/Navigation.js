@@ -15,9 +15,13 @@ class Navigation extends React.Component {
   }
 
   menuActive(linkLocation, currentLocation) {
-    if (linkLocation === currentLocation) {
-      return true
+    let state
+    if (currentLocation === '' && linkLocation === 'watch') {
+      state = true
+    } else if (linkLocation === currentLocation) {
+      state = true
     }
+    return state
   }
 
   render() {

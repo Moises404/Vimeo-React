@@ -1,7 +1,15 @@
 //containers
 @import "../containers/App/_App";
 @import "../containers/Home/_Home";
-@import "../containers/About/_About";
+@import "../containers/StaffPicks/_StaffPicks";
+@import "../containers/Categories/_Categories";
+@import "../containers/Channels/_Channels";
+@import "../containers/Groups/_Groups";
 //components
 @import "../components/Navigation/_Navigation";
 @import "../components/Logo/_Logo";
+@import "../components/Carousel/_Carousel";
+@import "../components/CardBanner/_CardBanner";
+@import "../components/CardList/_CardList";
+@import "../components/CardPreview/_CardPreview";
+@import "../components/Playlist/_Playlist";

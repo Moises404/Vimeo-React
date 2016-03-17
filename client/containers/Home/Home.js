@@ -1,4 +1,5 @@
 import React from 'react'
+import Carousel from '../../components/Carousel/Carousel'
 
 class Home extends React.Component {
   static displayName = 'Home'
@@ -6,7 +7,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home">
-        <h1>{'Staff Picks'}</h1>
+        <Carousel/>
       </div>
     )
   }
