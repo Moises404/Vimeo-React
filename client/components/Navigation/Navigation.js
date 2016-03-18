@@ -42,15 +42,15 @@ class Navigation extends React.Component {
     console.log(currentLocation)
     
     const NavWatchLink = cn('Navigation-menu-link', 
-            {'--active': this.menuActive('watch', currentLocation)})
+            {'--active watch': this.menuActive('watch', currentLocation)})
     const NavStaffPicksLink = cn('Navigation-menu-link', 
-            {'--active': this.menuActive('staffpicks', currentLocation)})
+            {'--active staffpicks': this.menuActive('staffpicks', currentLocation)})
     const NavCategoriesLink = cn('Navigation-menu-link', 
-            {'--active': this.menuActive('categories', currentLocation)})
+            {'--active categories': this.menuActive('categories', currentLocation)})
     const NavChannelsLink = cn('Navigation-menu-link', 
-            {'--active': this.menuActive('channels', currentLocation)})
+            {'--active channels': this.menuActive('channels', currentLocation)})
     const NavGroupsLink = cn('Navigation-menu-link', 
-            {'--active': this.menuActive('groups', currentLocation)})
+            {'--active groups': this.menuActive('groups', currentLocation)})
 
     return (
       <nav className="Navigation">

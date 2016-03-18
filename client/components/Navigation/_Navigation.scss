@@ -58,7 +58,13 @@
     font-weight: bolder;
     background: white;
     border-radius: 25px;
-    color: black;
+    color: white;
+
+    &.watch { background: #FC1FA9};
+    &.staffpicks { background: #17A474};
+    &.categories { background: orange};
+    &.channels { background: #517E14};
+    &.groups { background: #281AC8};
   }
 }
 
