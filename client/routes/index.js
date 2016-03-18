@@ -16,6 +16,9 @@ export default (
       <Route path="categories" component={Categories}/>
       <Route path="channels" component={Channels}/>
       <Route path="groups" component={Groups}/>
+
+      <Route path="user/:userID" component={Home}/>
+      <Route path="channels/:channelsID" component={Home}/>
     </Route>
   </Router>
 )

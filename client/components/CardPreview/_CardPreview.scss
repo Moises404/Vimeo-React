@@ -1,91 +1,197 @@
 .CardPreview {
-	margin: 0 auto;
 	@include display(flex);
 	@include flex-direction(column);
-	@include justify-content(flex-start);
 	position: relative;
+	overflow: hidden;
+	&:hover {cursor: pointer;}
+	margin-bottom: 15px;
+	max-width: 215px;
+	overflow: hidden;
+}
+
+.CardPreview-image {
+	position: relative;
+	overflow: hidden;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.6);
+}
+
+.CardPreview-img {
+	position: absolute;
 	width: 100%;
 	height: 100%;
+	background-image: url('http://tech.co/wp-content/uploads/2014/12/future-marketing.jpg');
+	background-size: cover;
+	background-position: center center;
+	z-index: 20;
+	overflow: hidden;
 }
-.CardPreview-Video {
-	@include display(flex);
-	@include justify-content(center);
-	@include align-items(center);
-	position: relative;
-	z-index: 10;
+.CardPreview-overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
-	height: 395px;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 30;
+}
 
-	&:hover { cursor: pointer; }
+.CardPreview-overlay-text {
+	display: none;
+}
 
-	video {
-		position: relative;
-		width: auto;
-		height: 85%;
-		z-index: 10;
 
-		&:hover {
-			box-shadow: 0 0 3px rgba(0,0,0,.55);
-			-webkit-transform: scale(1.02,1.02);
-			transform: scale(1.02,1.02);
-		}
+.CardPreview-info { 
+	display: none;
+	margin: 0 5px;
+	color: #9DA2A8;
+	@include flex-direction(column);
+}
+
+.CardPreview-title-wrapper { 
+	font-size: .9em;
+	font-weight: bolder;
+	display: block;
+	position: relative;
+	color: #112233;
+	height: 18px;
+	width: auto;
+	line-height: 14px;
+
+	&:after {
+		content: '';
+		background-image: -webkit-gradient(linear,left top,right top,color-stop(0,hsla(0,0%,100%,0)),color-stop(100%,#fff));
+		background-image: -webkit-linear-gradient(left,hsla(0,0%,100%,0),#fff);
+		background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff);
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#00ffffff',EndColorStr='#ffffff');
+		bottom: 0;
+		height: 20px;
+		max-height: 100%;
+		position: absolute;
+		right: 0;
+		width: 60px;
 	}
 }
-
-.CardPreview-info {
-	@include display(flex);
-	@include flex-direction(column);
-	@include flex(1 0 0);
-	@include align-items(center);
-	@include justify-content(flex-start);
-	width: 100%;
-	background: rgba(0,0,0,.75);
-	z-index: 10;
-}
-
-.CardPreview-header {
-	@include display(flex);
-	@include justify-content(center);
-	@include align-items(center);
-	font-size: 1.2em;
-	height: 40px;
-	width: 100%;
-	color: #ABABAB;
-	&:hover { cursor: default;}
-}
 .CardPreview-title {
-	display: inline-block;
-	color: white;
-	font-size: 2.1em;
+	white-space: nowrap;
+	top: 5px;
+	left: 0;
+	width: auto;
+	position: absolute;
+}
+
+.CardPreview-user-info {
+	font-size: .7em;
+	display: inline-block; 
+	position: relative; 
+}
+
+.CardPreview-username { 
+	display: inline-block; 
+	position: relative;
+	margin-left: 5px;
 	font-weight: bolder;
 
 	&:hover {
 		cursor: pointer;
-		color: #44BBFF
+		color: #4bf;
 	}
 }
-.CardPreview-user-info {
-	@include display(flex);
-	@include justify-content(center);
-	color: white;
-	font-size: 1em;
-}
-.CardPreview-username {
-	color: #44BBFF;
-	font-weight: bolder;
-	margin-left: 5px;
 
-	&:hover { 
-		color: #11a8ff;
+
+
+
+
+.--full.CardPreview {
+	.CardPreview-image {
+		width: 197px;
+		height: 112px;
+		margin: 0 5px 5px 5px;
+	}
+
+	.CardPreview-info { 
+		overflow: hidden;
+		display: block;
+		position: relative;
+	}
+
+	&:hover {
+		cursor: pointer;
+
+		.CardPreview-overlay {
+			display: block;
+			background: rgba(255, 255, 255, 0.3);
+			z-index: 30;
+		}
+		
+		.CardPreview-img {
+			-webkit-transform: scale(1.08, 1.08);
+			transform: scale(1.08, 1.08);
+		}
+	}
+}
+.--portrait.CardPreview {
+	.CardPreview-image {
+		width: 125px;
+		height: 195px;
+		margin: 10px;
+	}
+
+	&:hover {
+		.CardPreview-overlay {
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			cursor: pointer;
+		}
+		.CardPreview-overlay-text {
+			position: relative;
+			display: inline-block;
+			font-size: .8em;
+			font-weight: bolder;
+			color: #4bf;
+			padding: 3px 20px;
+			border: 2px solid #4bf;
+			border-radius: 4px;
+			text-align: center;
+
+			&:hover { color: white; border-color: white;}
+
+		}
+	}
+}
+
+.--category.CardPreview {
+	.CardPreview-image {
+		width: 197px;
+		height: 112px;
+		margin: 0 5px 5px 5px;
+	}
+
+	&:hover {
+		.CardPreview-overlay {
+			display: block;
+			cursor: pointer;
+			background: rgba(0, 0, 0, 0.7);
+		}
+		.CardPreview-overlay-text {
+			color: #4bf;
+		}
+	}
+
+	.CardPreview-overlay {
+		display: block;
 		cursor: pointer;
 	}
-}
-.CardPreview-background {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: gray;
-	top: 0;
-	left: 0;
-	z-index: 0;
+	.CardPreview-overlay-text {
+		margin: 15px auto 0 auto;
+		position: absolute;
+		left: 0;
+		right: 0;
+		display: inline-block;
+		font-weight: bolder;
+		color: white;
+		text-align: center;
+	}
+
 }

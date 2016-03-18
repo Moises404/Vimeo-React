@@ -1,27 +1,52 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
+import cn from 'classnames'
 
 class CardPreview extends React.Component {
 	static displayName = 'CardPreview'
 
+	static propTypes = {
+		'layout': PropTypes.object,
+		'content': PropTypes.object
+	}
+
+	static defaultProps = {
+		'layout': {},
+		'content': {}
+	}
+
 	render() {
-		const testSource = 'https://player.vimeo.com/external/76979871.hd.mp4?s=700bf8f30f8f8114cc372e94c4156aaf&profile_id=113'
+		const {layout, content} = this.props
+		const CardPreviewCN = cn('CardPreview', {
+			'--full': layout.full,
+			'--portrait': layout.portrait,
+			'--category': layout.category
+		})
+
+		const CardPreviewImgStyle = {
+			backgroundImage: `url(${content.pictures.sizes[2].link})`,
+			backgroundSize: 'cover',
+			backgroundPosition: 'center'
+		}
+
+		// console.log('CARD: ', content)
 
 		return (
-			<div className="CardPreview">
-				<div className="CardPreview-Video">
-					<video>
-					  <source src={testSource} type="video/mp4"/>
-					</video>
-				</div>
-				<div className="CardPreview-info">
-					<div className="CardPreview-header">{`WATCH`}</div>
-					<div className="CardPreview-title">{`VIMEO VIDEO PLAYER`}</div>
-					<div className="CardPreview-user-info">
-						{`from `}
-						<span className="CardPreview-username">{`User Name`}</span>
+			<div className={CardPreviewCN}>
+				<div className="CardPreview-image">
+					<div style={CardPreviewImgStyle} className="CardPreview-img"></div>
+					<div className="CardPreview-overlay">
+						<span className="CardPreview-overlay-text">{`Watch`}</span>
 					</div>
 				</div>
-				<div className="CardPreview-background"></div>
+				<div className="CardPreview-info">
+					<span className="CardPreview-title-wrapper">
+						<span className="CardPreview-title">{`${content.name}`}</span>
+					</span>
+					<span className="CardPreview-user-info">
+						{`from`}
+						<span className="CardPreview-username">{`${content.user.name}`}</span>
+					</span>
+				</div>
 			</div>
 		)
 	}

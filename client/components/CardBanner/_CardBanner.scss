@@ -7,7 +7,19 @@
 	width: 100%;
 	height: 100%;
 }
-.CardBanner-Video {
+
+.CardBanner-header { display: none; }
+.CardBanner-header-title { display: none; }
+.CardBanner-header-info { display: none; }
+
+.CardBanner-wrapper {
+	@include display(flex);
+	@include flex-direction(row);
+	z-index: 20;
+	height: 100%;
+}
+
+.CardBanner-video-wrapper {
 	@include display(flex);
 	@include justify-content(center);
 	@include align-items(center);
@@ -17,18 +29,23 @@
 	height: 395px;
 
 	&:hover { cursor: pointer; }
+}
 
-	video {
-		position: relative;
-		width: auto;
-		height: 85%;
-		z-index: 10;
+.CardBanner-video {
+	position: relative;
+	width: 600px;
+	height: 355px;
+	z-index: 20;
+	background: red;
+	// position: relative;
+	// width: auto;
+	// height: 85%;
+	// z-index: 10;
 
-		&:hover {
-			box-shadow: 0 0 3px rgba(0,0,0,.55);
-			-webkit-transform: scale(1.02,1.02);
-			transform: scale(1.02,1.02);
-		}
+	&:hover {
+		box-shadow: 0 0 3px rgba(0,0,0,.55);
+		-webkit-transform: scale(1.02,1.02);
+		transform: scale(1.02,1.02);
 	}
 }
 
@@ -43,7 +60,7 @@
 	z-index: 10;
 }
 
-.CardBanner-header {
+.CardBanner-info-header {
 	@include display(flex);
 	@include justify-content(center);
 	@include align-items(center);
@@ -88,4 +105,132 @@
 	top: 0;
 	left: 0;
 	z-index: 0;
+	filter: blur(50px);
+	 -webkit-filter: blur(50px);
 }
+.CardBanner-gradient {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: gray;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	background: -webkit-linear-gradient(rgba(0,0,0,.5),rgba(109,109,109,.5));
+	background: linear-gradient(rgba(0,0,0,.5),rgba(109,109,109,.5));
+}
+
+/*
+ * CARD LAYOUT OVERRIDES
+ */
+
+ .CardBanner.--framed {
+ 	@include flex-direction(column);
+
+ 	.CardBanner-header {display: none;}
+ 	.CardBanner-wrapper {
+ 		@include flex-direction(column);
+ 	}
+ }
+
+ .CardBanner.--landscape {
+ 	@include flex-direction(column);
+ 	@include align-items(center);
+ 	@include justify-content(center);
+ 	max-height: 560px;
+
+ 	.CardBanner-header {
+ 		position: relative;
+ 		@include display(flex);
+ 		@include flex-direction(column);
+ 		z-index: 20;
+ 		max-width: 950px;
+ 		color: black;
+ 		height: 120px;
+ 		width: 100%;
+
+ 		@media (max-width: 800px) {
+ 			width: calc(100vw - 20px);
+ 			margin: 10px;
+ 		}
+ 	}
+
+ 	.CardBanner-header-title {
+ 		display: block;
+ 		position: relative; 
+ 		font-size: 2em;
+ 		font-weight: bolder;
+ 		color: white;
+ 		margin-bottom: 20px;
+ 	}
+
+ 	.CardBanner-header-info {
+ 		display: block;
+ 		position: relative; 
+ 		font-size: 1em;
+ 		color: white;
+ 	}
+
+ 	.CardBanner-wrapper {
+ 		height: 50%;
+ 		width: calc(100vw - 20px);
+ 		max-width: 950px;
+ 		margin: 10px;
+ 		overflow: hidden;
+
+ 		&:hover {
+ 			box-shadow: 0 0 3px rgba(0,0,0,.55);
+ 			-webkit-transform: scale(1.02,1.02);
+ 			transform: scale(1.02,1.02);
+ 			cursor: pointer;
+ 		}
+
+ 		@media (max-width: 800px) {
+ 			width: 90%;
+ 			position: relative;
+ 			height: 240px;
+ 		}
+ 		@media (max-width: 600px) {
+ 			@include flex-direction(column);
+ 			@include align-items(center);
+ 			width: 80%;
+ 			position: relative;
+ 			height: 500px;
+ 		}
+ 	}
+
+ 	.CardBanner-video {
+ 		@include justify-content(center);
+ 		@include align-items(center);
+ 		@include flex(5 0 0);
+ 		position: relative;
+ 		z-index: 10;
+ 		width: auto;
+ 		height: 100%;
+ 		overflow: hidden;
+
+ 		video { 
+ 			height: 110%;
+ 			width: auto; 
+
+ 			&:hover { transform: none; }
+
+ 			@media (max-width: 800px) {
+ 				height: 100%;
+ 				width: auto;
+
+ 			}
+ 		}
+
+ 		
+ 	}
+ 	.CardBanner-info {
+ 		@include flex(4 0 0);
+ 		height: 100%;
+ 		width: 100%;
+ 	}
+ 	.CardBanner-header {}
+ 	.CardBanner-title {}
+ 	.CardBanner-user-info {}
+ 	.CardBanner-username {}
+ }
