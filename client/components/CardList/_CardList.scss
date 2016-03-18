@@ -4,6 +4,7 @@
 	max-width: 850px;
 	display: block;
 	float: left;
+	border-bottom: 1px solid #e1e2e3;
 }
 
 .CardList-header {
@@ -28,6 +29,7 @@
 	position: relative;
 	font-weight: bolder;
 	font-size: 1.5em;
+	color: #445566;
 
 	&:hover { 
 		cursor: pointer;
@@ -36,6 +38,8 @@
 }
 
 .CardList-info {
+	text-align: center;
+	max-width: 500px;
 	font-size: .8em;
 	position: relative;
 }

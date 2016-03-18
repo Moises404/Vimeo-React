@@ -17,8 +17,10 @@ export default (
       <Route path="channels" component={Channels}/>
       <Route path="groups" component={Groups}/>
 
-      <Route path="user/:userID" component={Home}/>
-      <Route path="channels/:channelsID" component={Home}/>
+      <Route path="/videos/:videoID" component={Home}/>
+      <Route path="/users/:user ID" component={Home}/>
+      <Route path="/channels/:channelID" component={Home}/>
+      <Route path="/:videoID" component={Home}/>
     </Route>
   </Router>
 )

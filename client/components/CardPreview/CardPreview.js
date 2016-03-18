@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import {Link} from 'react-router'
 import cn from 'classnames'
 
 class CardPreview extends React.Component {
@@ -28,23 +29,25 @@ class CardPreview extends React.Component {
 			backgroundPosition: 'center'
 		}
 
-		// console.log('CARD: ', content)
-
 		return (
 			<div className={CardPreviewCN}>
-				<div className="CardPreview-image">
+				<Link className="CardPreview-image" to={`${content.uri}`}>
 					<div style={CardPreviewImgStyle} className="CardPreview-img"></div>
 					<div className="CardPreview-overlay">
 						<span className="CardPreview-overlay-text">{`Watch`}</span>
 					</div>
-				</div>
+				</Link>
 				<div className="CardPreview-info">
-					<span className="CardPreview-title-wrapper">
-						<span className="CardPreview-title">{`${content.name}`}</span>
-					</span>
+					<Link className="CardPreview-title-wrapper" to={`${content.uri}`}>
+						<span className="CardPreview-title">
+							{`${content.name}`}
+						</span>
+					</Link>
 					<span className="CardPreview-user-info">
 						{`from`}
-						<span className="CardPreview-username">{`${content.user.name}`}</span>
+						<Link className="CardPreview-username" to={`${content.user.uri}`}>
+							{`${content.user.name}`}
+						</Link>
 					</span>
 				</div>
 			</div>

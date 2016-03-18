@@ -36,11 +36,7 @@
 	width: 600px;
 	height: 355px;
 	z-index: 20;
-	background: red;
-	// position: relative;
-	// width: auto;
-	// height: 85%;
-	// z-index: 10;
+	background: rgba(0, 0, 0, 0.5);
 
 	&:hover {
 		box-shadow: 0 0 3px rgba(0,0,0,.55);

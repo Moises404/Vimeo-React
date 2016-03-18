@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import {Link} from 'react-router'
 import CardPreview from '../CardPreview/CardPreview'
 import {shuffle} from 'lodash'
 
@@ -16,9 +17,6 @@ class CardList extends React.Component {
 	}
 
 	createCards(content, layout) {
-		// const test = {'key': 'value'}
-		// const testContent = [test, test, test, test, test, test, test, test]
-
 		return content.map((tC, i) => <CardPreview layout={layout} content={content[i]} key={i}/>)
 	}
 
@@ -27,19 +25,20 @@ class CardList extends React.Component {
 		let {content} = this.props
 
 		content = shuffle(content)
-		console.log(content)
-		// console.log('CARD-LIST: ', content)
+
 		if (!content) return null
 
 		return (
 			<div className="CardList">
 				<div className="CardList-header">
-					<span className="CardList-profile">
+					<Link className="CardList-profile" to={`${content[0].user.uri}`}>
 						<img src={`${content[0].user.pictures.sizes[3].link}`}/>
-					</span>
-					<span className="CardList-title">{`Staff Picks`}</span>
+					</Link>
+					<Link className="CardList-title" to={`${content[0].user.uri}`}>
+						
+					</Link>
 					<span className="CardList-info">
-						{` Carefully curated videos, handpicked by the Vimeo staff.`}
+						{`${content[0].user.bio}`}
 					</span>
 				</div>
 				<div className="CardsList-grid">

@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import {Link} from 'react-router'
 import {shuffle} from 'lodash'
 import cn from 'classnames'
 
@@ -54,15 +55,21 @@ class CardBanner extends React.Component {
 					</span>
 				</div>
 				<div className="CardBanner-wrapper">
-					<div className="CardBanner-video-wrapper">
-						<div className="CardBanner-video" style={CardBannerVideoStyle}></div>
-					</div>
+					<Link className="CardBanner-video-wrapper" to={`${content[0].uri}`} >
+						<div className="CardBanner-video" 
+							style={CardBannerVideoStyle}>
+						</div>
+					</Link>
 					<div className="CardBanner-info">
 						<div className="CardBanner-info-header">{`WATCH`}</div>
-						<div className="CardBanner-title">{`${content[0].name}`}</div>
+						<Link className="CardBanner-title" to={`${content[0].uri}`}>
+							{`${content[0].name}`}
+						</Link>
 						<div className="CardBanner-user-info">
 							{`from `}
-							<span className="CardBanner-username">{`${content[0].user.name}`}</span>
+							<Link className="CardBanner-username" to={`${content[0].user.uri}`}>
+								{`${content[0].user.name}`}
+							</Link>
 						</div>
 					</div>
 				</div>
