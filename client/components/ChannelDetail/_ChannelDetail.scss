@@ -1,4 +1,4 @@
-.CardBanner {
+.ChannelDetail {
 	margin: 0 auto;
 	@include display(flex);
 	@include flex-direction(column);
@@ -8,18 +8,18 @@
 	height: 100%;
 }
 
-.CardBanner-header { display: none; }
-.CardBanner-header-title { display: none; }
-.CardBanner-header-info { display: none; }
+.ChannelDetail-header { display: none; }
+.ChannelDetail-header-title { display: none; }
+.ChannelDetail-header-info { display: none; }
 
-.CardBanner-wrapper {
+.ChannelDetail-wrapper {
 	@include display(flex);
 	@include flex-direction(row);
 	z-index: 20;
 	height: 100%;
 }
 
-.CardBanner-video-wrapper {
+.ChannelDetail-video-wrapper {
 	@include display(flex);
 	@include justify-content(center);
 	@include align-items(center);
@@ -31,7 +31,7 @@
 	&:hover { cursor: pointer; }
 }
 
-.CardBanner-video {
+.ChannelDetail-video {
 	position: relative;
 	width: 600px;
 	height: 355px;
@@ -45,7 +45,7 @@
 	}
 }
 
-.CardBanner-info {
+.ChannelDetail-info {
 	@include display(flex);
 	@include flex-direction(column);
 	@include flex(1 0 0);
@@ -56,7 +56,7 @@
 	z-index: 10;
 }
 
-.CardBanner-info-header {
+.ChannelDetail-info-header {
 	@include display(flex);
 	@include justify-content(center);
 	@include align-items(center);
@@ -66,7 +66,7 @@
 	color: #ABABAB;
 	&:hover { cursor: default;}
 }
-.CardBanner-title {
+.ChannelDetail-title {
 	display: inline-block;
 	color: white;
 	font-size: 2.1em;
@@ -77,13 +77,13 @@
 		color: #44BBFF
 	}
 }
-.CardBanner-user-info {
+.ChannelDetail-user-info {
 	@include display(flex);
 	@include justify-content(center);
 	color: white;
 	font-size: 1em;
 }
-.CardBanner-username {
+.ChannelDetail-username {
 	color: #44BBFF;
 	font-weight: bolder;
 	margin-left: 5px;
@@ -93,7 +93,7 @@
 		cursor: pointer;
 	}
 }
-.CardBanner-background {
+.ChannelDetail-background {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -104,7 +104,7 @@
 	filter: blur(50px);
 	 -webkit-filter: blur(50px);
 }
-.CardBanner-gradient {
+.ChannelDetail-gradient {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -120,23 +120,22 @@
  * CARD LAYOUT OVERRIDES
  */
 
- .CardBanner.--framed {
+ .ChannelDetail.--framed {
  	@include flex-direction(column);
 
- 	.CardBanner-header {display: none;}
- 	.CardBanner-wrapper {
+ 	.ChannelDetail-header {display: none;}
+ 	.ChannelDetail-wrapper {
  		@include flex-direction(column);
  	}
  }
 
- .CardBanner.--landscape {
+ .ChannelDetail.--landscape {
  	@include flex-direction(column);
  	@include align-items(center);
  	@include justify-content(center);
  	max-height: 560px;
- 	min-height: 560px;
 
- 	.CardBanner-header {
+ 	.ChannelDetail-header {
  		position: relative;
  		@include display(flex);
  		@include flex-direction(column);
@@ -146,14 +145,13 @@
  		height: 120px;
  		width: 100%;
 
-
  		@media (max-width: 800px) {
  			width: calc(100vw - 20px);
  			margin: 10px;
  		}
  	}
 
- 	.CardBanner-header-title {
+ 	.ChannelDetail-header-title {
  		display: block;
  		position: relative; 
  		font-size: 2em;
@@ -162,14 +160,14 @@
  		margin-bottom: 20px;
  	}
 
- 	.CardBanner-header-info {
+ 	.ChannelDetail-header-info {
  		display: block;
  		position: relative; 
  		font-size: 1em;
  		color: white;
  	}
 
- 	.CardBanner-wrapper {
+ 	.ChannelDetail-wrapper {
  		height: 50%;
  		width: calc(100vw - 20px);
  		max-width: 950px;
@@ -197,7 +195,7 @@
  		}
  	}
 
- 	.CardBanner-video-wrapper {
+ 	.ChannelDetail-video {
  		@include justify-content(center);
  		@include align-items(center);
  		@include flex(5 0 0);
@@ -222,13 +220,13 @@
 
  		
  	}
- 	.CardBanner-info {
+ 	.ChannelDetail-info {
  		@include flex(4 0 0);
  		height: 100%;
  		width: 100%;
  	}
- 	.CardBanner-header {}
- 	.CardBanner-title {}
- 	.CardBanner-user-info {}
- 	.CardBanner-username {}
+ 	.ChannelDetail-header {}
+ 	.ChannelDetail-title {}
+ 	.ChannelDetail-user-info {}
+ 	.ChannelDetail-username {}
  }

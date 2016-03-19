@@ -17,10 +17,18 @@ class CardPreview extends React.Component {
 
 	render() {
 		const {layout, content} = this.props
+
+		// console.log(content)
+		
 		const CardPreviewCN = cn('CardPreview', {
 			'--full': layout.full,
+			'--full-width': layout.fullWidth,
 			'--portrait': layout.portrait,
-			'--category': layout.category
+			'--category': layout.category,
+			'--mixgrid': layout.mixgrid,
+			'--right': layout.right,
+			'--left': layout.left,
+			'--mid': layout.mid
 		})
 
 		const CardPreviewImgStyle = {

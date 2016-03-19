@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router'
-import {shuffle} from 'lodash'
 import cn from 'classnames'
 
 class CardBanner extends React.Component {
@@ -17,14 +16,7 @@ class CardBanner extends React.Component {
 	}
 
 	render() {
-		// const {layout, content} = this.props
-		const {layout} = this.props
-		let {content} = this.props
-
-		content = shuffle(content)
-
-		console.log(content)
-
+		const {layout, content} = this.props
 		const CardBannerCN = cn('CardBanner', {
 			'--framed': layout.framed,
 			'--landscape': layout.landscape

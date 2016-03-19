@@ -53,3 +53,37 @@
 	@include justify-content(space-between);
 	@include flex-wrap(wrap);
 }
+
+.--noheader.CardList {
+	.CardList-header {
+		display: none;
+	}
+}
+
+
+/*			*/
+/* MIX-GRID */
+/*			*/
+
+.--mixgrid.CardList {
+	margin-top: 30px;
+	border-bottom: none;
+
+	&.--noheader {
+		.CardList-header {
+			display: none;
+		}
+	}
+	.CardList-profile {display: none;}
+
+	.CardList-header {
+		@include align-items(flex-start);
+		margin-left: 10px;
+	}
+
+	.CardsList-grid {
+		margin: 0;
+		display:block;
+		max-height: 230px;
+	}
+}

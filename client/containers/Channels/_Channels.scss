@@ -1,4 +1,4 @@
-.Home {
+.Channels{
   @include display(flex);
   @include justify-content(flex-start);
   @include align-items(center);
@@ -7,4 +7,5 @@
   min-width: 100vw;
   color: gray;
   background: white;
+  overflow: scroll;
 }

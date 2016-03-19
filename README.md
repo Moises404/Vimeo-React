@@ -2,20 +2,13 @@
   <img src="https://raw.githubusercontent.com/Art404/boiler404/master/boiler404.png" />
 </p>
 
-# boiler404
+# Vimeo React
 
-Isomorphic, React, ES6, Webpack based starter kit for quickly starting web app projects tailored for [art404](http://art404.com).
+Isomorphic, React, ES6, Webpack based starter used to create a demo example of interfacing with the Vimeo Simple API
 
 > Based off a fork of Richard Krawll's [react-starter](https://github.com/richardkall/react-starter)
 
 # Usage
-
-### Environment Variables
-
-Variable | Description
-:------- | :----------
-firebase\_url | Optional Firebase server to listen to, will get added to the `app` prop at the top level container.
-
 
 ```bash
 $ npm install

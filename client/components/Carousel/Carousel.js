@@ -5,12 +5,12 @@ class Carousel extends React.Component {
 	static displayName = 'Carousel'
 
 	static propTypes = {
-		'content': PropTypes.array
+		'content': PropTypes.array,
+		'layout': PropTypes.object
 	}
 
 	render() {
-		const layout = {framed: true}
-		const {content} = this.props
+		const {layout, content} = this.props
 
 		return (
 			<section className="Carousel">

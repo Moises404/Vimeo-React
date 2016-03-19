@@ -4,9 +4,9 @@ import CardList from '../../components/CardList/CardList'
 // import CardBanner from '../../components/CardBanner/CardBanner'
 
 
-class Categories extends React.Component {
+class CategoriesDetail extends React.Component {
 
-  static displayName = 'Categories'
+  static displayName = 'CategoriesDetail'
 
   static propTypes = {
     'data': PropTypes.array
@@ -17,52 +17,56 @@ class Categories extends React.Component {
 
       const cardList1 = {
         content: data,
-        childrenlayout: {category: true}
+        layout: {
+          mixgrid: true,
+          noheader: true
+        },
+        childrenlayout: {
+          mixgrid: true,
+          right: true
+        }
       }
 
       const cardList2 = {
         content: data,
-        layout: {mixgrid: true},
+        layout: {
+          mixgrid: true,
+          noheader: true
+        },
         childrenlayout: {
           mixgrid: true,
-          right: true
+          noheader: true,
+          mid: true
         }
       }
 
       const cardList3 = {
         content: data,
-        layout: {mixgrid: true},
+        layout: {
+          mixgrid: true,
+          noheader: true
+        },
         childrenlayout: {
           mixgrid: true,
-          right: true
-        }
-      }
-
-      const cardList4 = {
-        content: data,
-        layout: {mixgrid: true},
-        childrenlayout: {
-          mixgrid: true,
-          right: true
+          left: true
         }
       }
 
       return (
-        <div className="Categories">
+        <div className="CategoriesDetail">
           <Carousel content={data} layout={{'landscape': true}}/>
-          <CardList content={cardList1.content} childrenlayout={cardList1.childrenlayout}/>
+          <CardList content={cardList1.content} 
+            childrenlayout={cardList1.childrenlayout} 
+            layout={cardList1.layout}/>
           <CardList content={cardList2.content} 
             childrenlayout={cardList2.childrenlayout} 
             layout={cardList2.layout}/>
           <CardList content={cardList3.content} 
             childrenlayout={cardList3.childrenlayout} 
             layout={cardList3.layout}/>
-          <CardList content={cardList4.content} 
-            childrenlayout={cardList4.childrenlayout} 
-            layout={cardList4.layout}/>
         </div>
       )
     }
 }
 
-export default Categories
+export default CategoriesDetail
