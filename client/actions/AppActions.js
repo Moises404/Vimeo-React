@@ -46,6 +46,30 @@ export function fetchFire() {
   )
 }
 
+const apiEndpoints = [
+  'channels',
+  'categories',
+  'staffpicks',
+  'groups'
+]
+
+export function fetchVimeoData(type) {
+  const API = process.env.API || apiLocal
+
+  const endpoint = (
+    type && apiEndpoints.indexOf(type) > -1
+     ? `${API}/getDB/${type}`
+      : `${API}/getDB`
+      )
+
+  return (dispatch) => (
+    fetch(endpoint)
+      .then((response) => response.json())
+      .then((json) => dispatch(fetchFireSuccess(json)))
+      .catch((error) => console.log(error))
+  )
+}
+
 // export function fetchWatch() {
 //   const API = process.env.API || apiLocal
 //   return (dispatch) => (

@@ -6,13 +6,13 @@ class Home extends React.Component {
   static displayName = 'Home'
 
   static propTypes = {
-    'data': PropTypes.array 
+    'staffpicks': PropTypes.object
   }
 
   render() {
-    const {data} = this.props
+    const {staffpicks: {data}} = this.props
 
-    // console.log('DATA: ', data)
+    console.log(this.props)
 
     const cardList1 = {content: data, childrenlayout: {full: true}}
     const cardList2 = {content: data, childrenlayout: {portrait: true}}
