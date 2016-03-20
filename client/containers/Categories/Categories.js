@@ -1,9 +1,7 @@
 import React, {PropTypes} from 'react'
 // import Carousel from '../../components/Carousel/Carousel'
-// import CardList from '../../components/CardList/CardList'
+import CategoryCardList from '../../components/CategoryCardList/CategoryCardList'
 import {vimeoCategories} from '../../constants/VimeoTypes'
-// import CardBanner from '../../components/CardBanner/CardBanner'
-
 
 class Categories extends React.Component {
 
@@ -24,6 +22,17 @@ class Categories extends React.Component {
     }
   }
 
+  createCategoryList(data, layout) {
+    return data.map((item, i) => {
+      console.log(item)
+      return (
+        <CategoryCardList content={data}
+          layout={layout.layout} key={i}
+          childrenlayout={layout.childrenlayout}/>
+      )
+    })
+  }
+
   render() {
       const {categories} = this.props
       console.log("PROPS: ", this.props)
@@ -32,61 +41,41 @@ class Categories extends React.Component {
         return (<div>Loading...</div>)
       }
 
-      const {data} = categories;
+      const {data} = categories
+
+      console.log()
 
       if (!data || data.length === 0) {
         console.log('loadig\\ng')
         return (<div>Loading...</div>)
       } 
       console.log('in categories')
-      // const cardList1 = {
-      //   content: data,
-      //   childrenlayout: {category: true}
-      // }
 
-      // const cardList2 = {
-      //   content: data,
-      //   layout: {mixgrid: true},
-      //   childrenlayout: {
-      //     mixgrid: true,
-      //     right: true
-      //   }
-      // }
+      const cardListCategories = {
+          content: data,
+          layout: {headerLeft: true},
+          childrenlayout: {category: true}
+      }
 
-      // const cardList3 = {
-      //   content: data,
-      //   layout: {mixgrid: true},
-      //   childrenlayout: {
-      //     mixgrid: true,
-      //     right: true
-      //   }
-      // }
+      const cardListCategorySingleLayout = {
+        layout: {mixgrid: true},
+        childrenlayout: {
+          mixgrid: true,
+          right: true
+        }
+      }
 
-      // const cardList4 = {
-      //   content: data,
-      //   layout: {mixgrid: true},
-      //   childrenlayout: {
-      //     mixgrid: true,
-      //     right: true
-      //   }
-      // }
-      console.log('cat, data: ', data)
+      // console.log('cat, data: ', data)
+      // <pre style={{color: 'white'}}>{JSON.stringify(data, null, 4)}</pre>
       // <Carousel content={data} layout={{'landscape': true}}/>
-      // <div className="Categories">
-      //   <CardList content={cardList1.content} childrenlayout={cardList1.childrenlayout}/>
-      //   <CardList content={cardList2.content} 
-      //     childrenlayout={cardList2.childrenlayout} 
-      //     layout={cardList2.layout}/>
-      //   <CardList content={cardList3.content} 
-      //     childrenlayout={cardList3.childrenlayout} 
-      //     layout={cardList3.layout}/>
-      //   <CardList content={cardList4.content} 
-      //     childrenlayout={cardList4.childrenlayout} 
-      //     layout={cardList4.layout}/>
-      // </div>
+
       return (
-        <pre style={{color: 'white'}}>{JSON.stringify(data, null, 4)}</pre>
-     
+        <div className="Categories">
+          <CategoryCardList content={cardListCategories.content}
+            layout={cardListCategories.layout}
+            childrenlayout={cardListCategories.childrenlayout}/>
+          {this.createCategoryList(data, cardListCategorySingleLayout)} 
+        </div>
       )
     }
 }
