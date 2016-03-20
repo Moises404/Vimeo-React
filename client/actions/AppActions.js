@@ -46,52 +46,52 @@ export function fetchFire() {
   )
 }
 
-export function fetchWatch() {
-  const API = process.env.API || apiLocal
-  return (dispatch) => (
-    fetch(`${API}/getWatch`)
-      .then((response) => response.json())
-      .then((json) => dispatch(fetchVimeoSuccess(json)))
-      .catch((error) => console.log(error))
-  )
-}
+// export function fetchWatch() {
+//   const API = process.env.API || apiLocal
+//   return (dispatch) => (
+//     fetch(`${API}/getWatch`)
+//       .then((response) => response.json())
+//       .then((json) => dispatch(fetchVimeoSuccess(json)))
+//       .catch((error) => console.log(error))
+//   )
+// }
 
-export function fetchStaffPicks() {
-  const API = process.env.API || apiLocal
-  return (dispatch) => (
-    fetch(`${API}/getStaffPicks`)
-      .then((response) => response.json())
-      .then((json) => dispatch(fetchVimeoSuccess(json)))
-      .catch((error) => console.log(error))
-  )
-}
+// export function fetchStaffPicks() {
+//   const API = process.env.API || apiLocal
+//   return (dispatch) => (
+//     fetch(`${API}/getStaffPicks`)
+//       .then((response) => response.json())
+//       .then((json) => dispatch(fetchVimeoSuccess(json)))
+//       .catch((error) => console.log(error))
+//   )
+// }
 
-export function fetchCategories() {
-  const API = process.env.API || apiLocal
-  return (dispatch) => (
-    fetch(`${API}/getCategories`)
-      .then((response) => response.json())
-      .then((json) => dispatch(fetchVimeoSuccess(json)))
-      .catch((error) => console.log(error))
-  )
-}
+// export function fetchCategories() {
+//   const API = process.env.API || apiLocal
+//   return (dispatch) => (
+//     fetch(`${API}/getCategories`)
+//       .then((response) => response.json())
+//       .then((json) => dispatch(fetchVimeoSuccess(json)))
+//       .catch((error) => console.log(error))
+//   )
+// }
 
-export function fetchChannels() {
-  const API = process.env.API || apiLocal
-  return (dispatch) => (
-    fetch(`${API}/getChannels`)
-      .then((response) => response.json())
-      .then((json) => dispatch(fetchVimeoSuccess(json)))
-      .catch((error) => console.log(error))
-  )
-}
+// export function fetchChannels() {
+//   const API = process.env.API || apiLocal
+//   return (dispatch) => (
+//     fetch(`${API}/getChannels`)
+//       .then((response) => response.json())
+//       .then((json) => dispatch(fetchVimeoSuccess(json)))
+//       .catch((error) => console.log(error))
+//   )
+// }
 
-export function fetchGroups() {
-  const API = process.env.API || apiLocal
-  return (dispatch) => (
-    fetch(`${API}/getGroups`)
-      .then((response) => response.json())
-      .then((json) => dispatch(fetchVimeoSuccess(json)))
-      .catch((error) => console.log(error))
-  )
-}
+// export function fetchGroups() {
+//   const API = process.env.API || apiLocal
+//   return (dispatch) => (
+//     fetch(`${API}/getGroups`)
+//       .then((response) => response.json())
+//       .then((json) => dispatch(fetchVimeoSuccess(json)))
+//       .catch((error) => console.log(error))
+//   )
+// }

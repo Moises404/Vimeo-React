@@ -9,7 +9,7 @@ class VideoDetail extends React.Component {
 
 	render() {
 		const {data} = this.props
-		console.log(data)
+		// console.log(data)
 
 		return (
 			<div className="VideoDetail">
