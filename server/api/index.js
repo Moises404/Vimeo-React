@@ -47,7 +47,7 @@ router.get('/getDB', (req, res) => {
 			})
 		},
 	], function (err) {
-		if (err) return next(err)
+		if (err) return err
 		console.log('RETURNING-ALL-ASYNC-DATA')
 		console.log(Object.keys(allData))
 		res.send(allData).end()	
