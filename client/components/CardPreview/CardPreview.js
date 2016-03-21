@@ -7,7 +7,7 @@ class CardPreview extends React.Component {
 
 	static propTypes = {
 		'layout': PropTypes.object,
-		'content': PropTypes.object
+		'content': PropTypes.object,
 	}
 
 	static defaultProps = {
@@ -17,8 +17,6 @@ class CardPreview extends React.Component {
 
 	render() {
 		const {layout, content} = this.props
-
-		// console.log(content)
 		
 		const CardPreviewCN = cn('CardPreview', {
 			'--full': layout.full,

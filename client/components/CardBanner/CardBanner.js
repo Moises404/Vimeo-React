@@ -48,7 +48,8 @@ class CardBanner extends React.Component {
 					</span>
 				</div>
 				<div className="CardBanner-wrapper">
-					<Link className="CardBanner-video-wrapper" to={`${content[0].uri}`} >
+					<Link className="CardBanner-video-wrapper" 
+						to={{pathname: `${content[0].uri}`, cardIndex: 0}}>
 						<div className="CardBanner-video" 
 							style={CardBannerVideoStyle}>
 						</div>

@@ -21,7 +21,8 @@ class CategoryCardList extends React.Component {
 
 	createCards(content, layout) {
 		return content.map((tC, i) => 
-			<CategoryCardPreview layout={layout} content={content[i]} key={i}/>)
+			<CategoryCardPreview layout={layout} 
+				content={content[i]} key={i} cardIndex={{'value': i}}/>)
 	}
 
 	render() {

@@ -14,11 +14,12 @@ class Home extends React.Component {
   }
 
   render() {
-    const {staffpicks, categories} = this.props
+    const {staffpicks, categories, channels, groups} = this.props
 
     console.log('HOME-PROPS: ', this.props)
     // categories, channels, groups
     const cardList1 = {
+      context: 'videos',
       header: {
         image: 'https://f.vimeocdn.com/images_v6/icons/icon_staffpicks_lg.png',
         title: 'Staff Picks', 
@@ -30,6 +31,7 @@ class Home extends React.Component {
     }
 
     const cardList2 = {
+      context: 'videos',
       header: {
         image: 'https://rachshnier.files.wordpress.com/2015/10/current-buzzfeed.jpg',
         title: 'Trending', 
@@ -43,6 +45,7 @@ class Home extends React.Component {
     }
 
     const cardList3 = {
+      context: 'channels',
       header: {
         image: 'https://f.vimeocdn.com/images_v6/icons/icon_vod_lg.png',
         title: 'Channels', 
@@ -57,6 +60,7 @@ class Home extends React.Component {
     }
 
     const cardList4 = {
+      context: 'categories',
       header: {
         image: 'https://f.vimeocdn.com/images_v6/icons/icon_categories_lg.png',
         title: 'Categories', 
@@ -71,6 +75,7 @@ class Home extends React.Component {
     }
 
     const cardList5 = {
+      context: 'groups',
       header: {
         image: 'http://icons.iconarchive.com/icons/blackvariant/button-ui-system-folders-alt/512/Group-icon.png',
         title: 'Groups', 
@@ -87,23 +92,29 @@ class Home extends React.Component {
       <div className="Home">
         <Carousel content={staffpicks} layout={{'framed': true}}/>
         
-        <CardList content={staffpicks.data} 
+        <CardList 
+          content={staffpicks.data}
+          cardListContext={cardList1.context}
           header={cardList1.header} 
           childrenlayout={cardList1.childrenlayout}/>
 
-        <CardList content={staffpicks.data} 
+        <CardList content={staffpicks.data}
+          cardListContext={cardList2.context}
           header={cardList2.header} 
           childrenlayout={cardList2.childrenlayout}/>
 
-        <CardList content={staffpicks.data} 
+        <CardList content={channels.data} 
+          cardListContext={cardList3.context}
           header={cardList3.header} 
           childrenlayout={cardList3.childrenlayout}/>
 
         <CategoryCardList content={categories.data}
+          cardListContext={cardList4.context}
           header={cardList4.header} 
           childrenlayout={cardList4.childrenlayout}/>
 
-        <CardList content={staffpicks.data} 
+        <CardList content={groups.data} 
+          cardListContext={cardList5.context}
           header={cardList5.header} 
           childrenlayout={cardList5.childrenlayout}/>
       </div>
