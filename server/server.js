@@ -40,6 +40,7 @@ if (DEBUG) {
   server.use(express.static(path.resolve(__dirname, '../build')))
   server.use(morgan('combined'))
 }
+
 server.use('/favicon.ico', (req, res) => res.send('favicon-test'))
 server.use('/api', api)
 server.use(reactMiddleware)

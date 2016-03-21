@@ -33,11 +33,10 @@ export class App extends Component {
   render() {
     const {app, children, layout, actions, client} = this.props
     const navProps = {actions, client, layout, children}
-    const childProps = merge(app, client)
+    const childProps = merge(app, client, actions)
     const appClasses = cn('App', `--${client.agent}`)
 
-    console.log('APP-PROPS: ', this.props)
-
+   console.log('app data: ', Object.keys(app))
     return (
       <div className={appClasses}>
         <Navigation {... navProps} />

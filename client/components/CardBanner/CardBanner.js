@@ -17,21 +17,22 @@ class CardBanner extends React.Component {
 
 	render() {
 		const {layout, content} = this.props
+
+		console.log('CARD-BANNER-PROPS', content)
+
 		const CardBannerCN = cn('CardBanner', {
 			'--framed': layout.framed,
 			'--landscape': layout.landscape
 		})
 
-		// const testSource = 'https://player.vimeo.com/external/76979871.hd.mp4?s=700bf8f30f8f8114cc372e94c4156aaf&profile_id=113'
-
 		const CardBannerBackgroundStyle = {
-			backgroundImage: `url(${content[0].pictures.sizes[5].link})`,
+			backgroundImage: `url(${content[0].pictures.sizes[4].link})`,
 			backgroundSize: 'cover',
 			backgroundPosition: 'center'
 		}
 
 		const CardBannerVideoStyle = {
-			backgroundImage: `url(${content[0].pictures.sizes[5].link})`,
+			backgroundImage: `url(${content[0].pictures.sizes[4].link})`,
 			backgroundSize: 'cover',
 			backgroundPosition: 'center'
 		}
@@ -59,8 +60,8 @@ class CardBanner extends React.Component {
 						</Link>
 						<div className="CardBanner-user-info">
 							{`from `}
-							<Link className="CardBanner-username" to={`${content[0].user.uri}`}>
-								{`${content[0].user.name}`}
+							<Link className="CardBanner-username" to={`${content[0].uri}`}>
+								{`${content[0].name}`}
 							</Link>
 						</div>
 					</div>
@@ -71,8 +72,5 @@ class CardBanner extends React.Component {
 		)
 	}
 }
-// <video>
-//   <source src={testSource} type="video/mp4"/>
-// </video>
 
 export default CardBanner

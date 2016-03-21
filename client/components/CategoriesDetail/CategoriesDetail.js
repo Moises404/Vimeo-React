@@ -1,22 +1,22 @@
 import React, {PropTypes} from 'react'
 import Carousel from '../../components/Carousel/Carousel'
-import CardList from '../../components/CardList/CardList'
-// import CardBanner from '../../components/CardBanner/CardBanner'
-
+import CategoryCardList from '../../components/CategoryCardList/CategoryCardList'
 
 class CategoriesDetail extends React.Component {
 
   static displayName = 'CategoriesDetail'
 
   static propTypes = {
-    'data': PropTypes.array
+    categories: PropTypes.object
   }
 
   render() {
-      const {data} = this.props
+      const {categories} = this.props
+
+      console.log('CATEGORY-DETAIL-PROPS: ', categories)
 
       const cardList1 = {
-        content: data,
+        content: categories.data,
         layout: {
           mixgrid: true,
           noheader: true
@@ -28,7 +28,7 @@ class CategoriesDetail extends React.Component {
       }
 
       const cardList2 = {
-        content: data,
+        content: categories.data,
         layout: {
           mixgrid: true,
           noheader: true
@@ -41,7 +41,7 @@ class CategoriesDetail extends React.Component {
       }
 
       const cardList3 = {
-        content: data,
+        content: categories.data,
         layout: {
           mixgrid: true,
           noheader: true
@@ -54,14 +54,17 @@ class CategoriesDetail extends React.Component {
 
       return (
         <div className="CategoriesDetail">
-          <Carousel content={data} layout={{'landscape': true}}/>
-          <CardList content={cardList1.content} 
+          <Carousel content={categories} layout={{'landscape': true}}/>
+          <CategoryCardList content={cardList1.content}
+            header={{}}
             childrenlayout={cardList1.childrenlayout} 
             layout={cardList1.layout}/>
-          <CardList content={cardList2.content} 
+          <CategoryCardList content={cardList2.content} 
+            header={{}}
             childrenlayout={cardList2.childrenlayout} 
             layout={cardList2.layout}/>
-          <CardList content={cardList3.content} 
+          <CategoryCardList content={cardList3.content}
+            header={{}}
             childrenlayout={cardList3.childrenlayout} 
             layout={cardList3.layout}/>
         </div>

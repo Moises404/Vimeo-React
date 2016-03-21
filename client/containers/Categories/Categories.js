@@ -1,25 +1,13 @@
 import React, {PropTypes} from 'react'
-// import Carousel from '../../components/Carousel/Carousel'
 import CategoryCardList from '../../components/CategoryCardList/CategoryCardList'
-import {vimeoCategories} from '../../constants/VimeoTypes'
+import Carousel from '../../components/Carousel/Carousel'
 
 class Categories extends React.Component {
 
   static displayName = 'Categories'
 
   static propTypes = {
-    categories: PropTypes.object,
-    'fetchVimeoData': PropTypes.func
-  }
-
-  componentDidMount() {
-    if (this.props.hasOwnProperty(vimeoCategories)) {
-      console.log('if (true) {};')
-    } else {
-      console.log('if (false) {};')
-
-      this.props.fetchVimeoData(vimeoCategories)
-    }
+    categories: PropTypes.object
   }
 
   createCategoryList(data, layout) {
@@ -27,6 +15,7 @@ class Categories extends React.Component {
       console.log(item)
       return (
         <CategoryCardList content={data}
+          header={{title: 'Category', subtitle: 'Category subtitle info'}}
           layout={layout.layout} key={i}
           childrenlayout={layout.childrenlayout}/>
       )
@@ -35,24 +24,12 @@ class Categories extends React.Component {
 
   render() {
       const {categories} = this.props
-      console.log("PROPS: ", this.props)
+      console.log("CATEGORIES-PROPS: ", categories)
 
-      if (!categories) {
-        return (<div>Loading...</div>)
-      }
-
-      const {data} = categories
-
-      console.log()
-
-      if (!data || data.length === 0) {
-        console.log('loadig\\ng')
-        return (<div>Loading...</div>)
-      } 
-      console.log('in categories')
+      if (!categories) return (<div>Loading...</div>)
 
       const cardListCategories = {
-          content: data,
+          content: categories.data,
           layout: {headerLeft: true},
           childrenlayout: {category: true}
       }
@@ -65,16 +42,14 @@ class Categories extends React.Component {
         }
       }
 
-      // console.log('cat, data: ', data)
-      // <pre style={{color: 'white'}}>{JSON.stringify(data, null, 4)}</pre>
-      // <Carousel content={data} layout={{'landscape': true}}/>
-
       return (
         <div className="Categories">
+          <Carousel content={categories} layout={{'landscape': true}}/>
           <CategoryCardList content={cardListCategories.content}
+            header={{}}
             layout={cardListCategories.layout}
             childrenlayout={cardListCategories.childrenlayout}/>
-          {this.createCategoryList(data, cardListCategorySingleLayout)} 
+          {this.createCategoryList(categories.data, cardListCategorySingleLayout)} 
         </div>
       )
     }

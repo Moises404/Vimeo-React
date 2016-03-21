@@ -6,7 +6,7 @@ class UserDetail extends React.Component {
 	static displayName = 'UserDetail'
 
 	static propTypes = {
-		data: PropTypes.array
+		'staffpicks': PropTypes.object
 	}
 
 	// static defaultProps = {
@@ -18,10 +18,11 @@ class UserDetail extends React.Component {
 	// }
 
 	render() {
-		const {data} = this.props
+		const {staffpicks} = this.props
+		console.log('USER-DETAIL-PROPS: ', staffpicks)
 
 		const cardList1 = {
-		  content: data,
+		  content: staffpicks.data,
 		  layout: {noheader: true},
 		  childrenlayout: {
 		  	full: true,
@@ -29,24 +30,22 @@ class UserDetail extends React.Component {
 		  }
 		}
 
-		// const user = this.getUser(data, data[0].resource_key)
 		// if (!data) return
-		// console.log('data', data)
 
-		return (
+		return (	
 			<div className="UserDetail">
 				<div className="UserDetail-wrapper">
 					<div className="UserDetail-header">
-						<div className="UserDetail-title">{`${data[0].user.name}`}</div>
-						<div className="UserDetail-subtitle">{`${data[0].user.location}`}</div>
+						<div className="UserDetail-title">{`${staffpicks.data[0].user.name}`}</div>
+						<div className="UserDetail-subtitle">{`${staffpicks.data[0].user.location}`}</div>
 					</div>
 					<div className="UserDetail-profile-content-wrapper">
 						<div className="UserDetail-profile">
 							<div className="UserDetail-profile-image">
-								<img src={`${data[0].user.pictures.sizes[3].link}`}/>
+								<img src={`${staffpicks.data[0].user.pictures.sizes[3].link}`}/>
 							</div>
 							<div className="UserDetail-profile-info">
-								{`${data[0].user.bio}`}
+								{`${staffpicks.data[0].user.bio}`}
 							</div>
 						</div>
 						<div className="UserDetail-info">
@@ -77,7 +76,9 @@ class UserDetail extends React.Component {
 								</span>
 							</div>
 							<div className="UserDetail-videos">
-								<CardList content={cardList1.content} 
+								<CardList 
+								  header= {{}}
+								  content={cardList1.content} 
 								  childrenlayout={cardList1.childrenlayout} 
 								  layout={cardList1.layout}/>
 							</div>

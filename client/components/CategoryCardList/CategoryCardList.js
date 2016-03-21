@@ -7,6 +7,7 @@ class CategoryCardList extends React.Component {
 	static displayName = 'CategoryCardList'
 
 	static propTypes = {
+		'header': PropTypes.object,
 		'content': PropTypes.array,
 		'layout': PropTypes.object,
 		'childrenlayout': PropTypes.object
@@ -24,29 +25,30 @@ class CategoryCardList extends React.Component {
 	}
 
 	render() {
-		const {layout, content, childrenlayout} = this.props
+		const {header, layout, content, childrenlayout} = this.props
 
-		console.log('CONTENT', content)
-		console.log('CHILDREN-LAYOUT: ', childrenlayout)
+		// console.log('CONTENT', content)
+		// console.log('CHILDREN-LAYOUT: ', childrenlayout)
 		const CategoryCardListCN = cn('CategoryCardList', {
 			'--mixgrid': layout.mixgrid,
 			'--noheader': layout.noheader,
 			'--header-left': layout.headerLeft
 		})
 
+		console.log('CATEGORY-CONTENT: ', content)
 		if (!content) return null
 
 		return (
 			<div className={CategoryCardListCN}>
 				<div className="CategoryCardList-header">
 					<Link className="CategoryCardList-profile" to={`${content[0].uri}`}>
-						<img src={`${content[0].pictures.sizes[3].link}`}/>
+						<img src={header.image}/>
 					</Link>
 					<Link className="CategoryCardList-title" to={`${content[0].uri}`}>
-						{`${content[0].name}`}	
+						{header.title}
 					</Link>
 					<span className="CategoryCardList-info">
-						{`${content[0].subcategories[0].name}`}
+						{header.subtitle}
 					</span>
 				</div>
 				<div className="CategoryCardList-grid">

@@ -7,4 +7,13 @@
   min-width: 100vw;
   color: gray;
   background: white;
+  overflow: hidden;
+}
+
+.Groups pre {
+	padding: 50px;
+	width: 100%;
+	position: relative;
+	display: inline-block;
+	word-wrap: break-word;
 }

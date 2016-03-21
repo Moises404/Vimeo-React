@@ -22,7 +22,6 @@ export default (
       <Route path="categories/:categoriesID" component={CategoriesDetail}/>
       <Route path="channels" component={Channels}/>
       <Route path="groups" component={Groups}/>
-      
       <Route path="videoDetail" component={VideoDetail}/>
       <Route path="userDetail" component={UserDetail}/>
       <Route path="channelDetail" component={ChannelDetail}/>

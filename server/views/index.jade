@@ -19,11 +19,7 @@ html
   body
     #root!= content
     script.
-      try {
       window.__INITIAL_STATE__ = !{initialState}
-      } catch (e) {
-        window.__INITIAL_STATE__ = {}
-      }
     script(src="https://platform.instagram.com/en_US/embeds.js")
     script.
       window.twttr = (function(d, s, id) {
