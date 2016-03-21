@@ -20,12 +20,6 @@ Start development server:
 $ npm run start:dev
 ```
 
-Start with firebase:
-
-```bash
-$ npm run firebase_url="XXX" start:dev
-```
-
 Start production server:
 
 ```bash
@@ -49,7 +43,6 @@ $ git push heroku master
 
 # Tech Stack
 
-- [x] [firebase](https://firebase.com/)
 - [x] [Babel](https://babeljs.io/)
 - [x] [ESLint](http://eslint.org/)
 - [x] [Express](http://expressjs.com/)
