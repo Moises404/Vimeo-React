@@ -19,7 +19,7 @@ class UserDetail extends React.Component {
 
 	render() {
 		const {staffpicks} = this.props
-		console.log('USER-DETAIL-PROPS: ', staffpicks)
+		// console.log('USER-DETAIL-PROPS: ', staffpicks)
 
 		const cardList1 = {
 		  content: staffpicks.data,

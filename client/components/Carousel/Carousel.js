@@ -12,7 +12,7 @@ class Carousel extends React.Component {
 	render() {
 		const {layout, content} = this.props
 
-		console.log('CAROUSEL-PROPS', content)
+		// console.log('CAROUSEL-PROPS', content)
 
 		return (
 			<section className="Carousel">

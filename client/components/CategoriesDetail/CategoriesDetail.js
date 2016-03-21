@@ -13,7 +13,7 @@ class CategoriesDetail extends React.Component {
   render() {
       const {categories} = this.props
 
-      console.log('CATEGORY-DETAIL-PROPS: ', categories)
+      // console.log('CATEGORY-DETAIL-PROPS: ', categories)
 
       const cardList1 = {
         content: categories.data,

@@ -35,7 +35,7 @@ class CategoryCardList extends React.Component {
 			'--header-left': layout.headerLeft
 		})
 
-		console.log('CATEGORY-CONTENT: ', content)
+		// console.log('CATEGORY-CONTENT: ', content)
 		if (!content) return null
 
 		return (

@@ -18,7 +18,7 @@ class CardBanner extends React.Component {
 	render() {
 		const {layout, content} = this.props
 
-		console.log('CARD-BANNER-PROPS', content)
+		// console.log('CARD-BANNER-PROPS', content)
 
 		const CardBannerCN = cn('CardBanner', {
 			'--framed': layout.framed,
