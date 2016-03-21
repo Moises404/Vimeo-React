@@ -9,8 +9,8 @@ import routes from '../../client/routes'
 import MobileDetect from 'mobile-detect'
 
 const defaultCookie = '{"firstTime": true}'
-const cookieName = 'boiler404'
-const contact404 = '@artnotfound'
+const cookieName = 'VimeoReact'
+const contact404 = '@Moises404'
 
 function hydrateInitialStore (req) {
   const md = new MobileDetect(req.headers['user-agent'])

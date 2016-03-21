@@ -10,6 +10,14 @@ const vimeoClientSecrets = process.env.vimeo_client_secrets
 const vimeoAPI = new Vimeo(vimeoClientIdentifier, vimeoClientSecrets, vimeoAccessToken)
 const router = new express.Router()
 
+// const allData = {
+// 	staffpicks: {kay: 'value'},
+// 	channels: {kay: 'value'},
+// 	groups: {kay: 'value'},
+// 	categories: {kay: 'value'}
+// }
+
+
 router.get('/getDB', (req, res) => {
 	let allData = {}
 	async.parallel([
@@ -47,7 +55,7 @@ router.get('/getDB', (req, res) => {
 			})
 		},
 	], function (err) {
-		if (err) return err
+		if (err) return next(err)
 		console.log('RETURNING-ALL-ASYNC-DATA')
 		console.log(Object.keys(allData))
 		res.send(allData).end()	
