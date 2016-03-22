@@ -1,0 +1,58 @@
+[
+	{
+		"context": "videos",
+		"header": {
+		  "image": "https://f.vimeocdn.com/images_v6/icons/icon_staffpicks_lg.png",
+		  "title": "Staff Picks", 
+		  "subtitle": "Carefully curated videos, handpicked by the Vimeo staff."
+		}, 
+		"childrenlayout": {
+		  "full": true
+		}
+	},
+	{
+		"context": "videos",
+		"header": {
+		  "image": "https://rachshnier.files.wordpress.com/2015/10/current-buzzfeed.jpg",
+		  "title": "Trending", 
+		  "subtitle": "Discover and buy incredible titles directly from creators, who take home 90% of revenue after transaction costs"
+		}, 
+		"childrenlayout": {
+		  "portrait": true
+		}
+	},
+	{
+		"context": "channels",
+		"header": {
+		  "image": "https://f.vimeocdn.com/images_v6/icons/icon_vod_lg.png",
+		  "title": "Channels", 
+		  "subtitle": "Channels are a simple, beautiful way to showcaseand watch videos. You can create Channels around common themes and easily share what you love with others."
+		}, 
+		"childrenlayout": {
+		  "portrait": true
+		}
+	},
+	{
+		"context": "categories",
+		"header": {
+		  "image": "https://f.vimeocdn.com/images_v6/icons/icon_categories_lg.png",
+		  "title": "Categories", 
+		  "subtitle": "Discover top-notch videos, creators, and collectionsrelated to your interests, hand-selected by our 100-percent-human curation team."
+		},
+		"layout": {"mixgrid": true},
+		"childrenlayout": {
+		  "category": true
+		}
+	},
+	{
+		"context": "groups",
+		"header": {
+		  "image": "http://icons.iconarchive.com/icons/blackvariant/button-ui-system-folders-alt/512/Group-icon.png",
+		  "title": "Groups", 
+		  "subtitle": "Groups are communities and conversations around videosand other things that people like. You can create yourown Groups or contribute to the Groups of others."
+		},
+		"childrenlayout": {
+		  "full": true
+		}
+	}
+]

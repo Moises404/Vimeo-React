@@ -18,7 +18,7 @@ class CardPreview extends React.Component {
 	render() {
 		const {layout, content} = this.props
 		
-		const CardPreviewCN = cn('CardPreview', {
+		const cardPreviewCN = cn('CardPreview', {
 			'--full': layout.full,
 			'--full-width': layout.fullWidth,
 			'--portrait': layout.portrait,
@@ -29,16 +29,16 @@ class CardPreview extends React.Component {
 			'--mid': layout.mid
 		})
 
-		const CardPreviewImgStyle = {
+		const cardPreviewImgStyle = {
 			backgroundImage: `url(${content.image})`,
 			backgroundSize: 'cover',
 			backgroundPosition: 'center'
 		}
 
 		return (
-			<div className={CardPreviewCN}>
+			<div className={cardPreviewCN}>
 				<Link className="CardPreview-image" to={`${content.link}`}>
-					<div style={CardPreviewImgStyle} className="CardPreview-img"></div>
+					<div style={cardPreviewImgStyle} className="CardPreview-img"></div>
 					<div className="CardPreview-overlay">
 						<span className="CardPreview-overlay-text">{`Watch`}</span>
 					</div>

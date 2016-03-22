@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Art404/boiler404/master/boiler404.png" />
+  <img src="https://db.tt/RJ6FhKkt" />
 </p>
 
 # Vimeo React

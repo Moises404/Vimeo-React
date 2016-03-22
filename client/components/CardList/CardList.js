@@ -41,7 +41,7 @@ class CardList extends React.Component {
 		const standardizedData = standardizeCards(cardListContext, content)
 		console.log('STANDARDIZED-DATA: ', standardizedData)
 
-		const CardListCN = cn('CardList', {
+		const cardListCN = cn('CardList', {
 			'--mixgrid': layout.mixgrid,
 			'--noheader': layout.noheader
 		})
@@ -49,7 +49,7 @@ class CardList extends React.Component {
 		if (!content) return null
 
 		return (
-			<div className={CardListCN}>
+			<div className={cardListCN}>
 				<div className="CardList-header">
 					<Link className="CardList-profile" to={`${content[0].uri}`}>
 						<img src={header.image}/>
