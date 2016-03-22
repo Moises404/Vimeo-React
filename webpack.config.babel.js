@@ -15,12 +15,13 @@ export default {
     publicPath: '/'
   },
   module: {
-    preLoaders: [
+    preLoaders: 
+    DEBUG ? [
       {
         test: /\.js$/,
         loader: 'eslint-loader'
       }
-    ],
+    ] : [],
     loaders: [
       {
         test: /\.css$/,
