@@ -17,7 +17,6 @@ class CardPreview extends React.Component {
 
 	render() {
 		const {layout, content} = this.props
-		return null
 		
 		const CardPreviewCN = cn('CardPreview', {
 			'--full': layout.full,
