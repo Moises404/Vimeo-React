@@ -25,8 +25,7 @@ class CardList extends React.Component {
 	createCards(content, layout) {
 		return content.map((item, i) => 
 			<CardPreview layout={layout} 
-				content={content} key={i} 
-				cardContext={{'index': i, 'context': 'staffpicks'}}/>)	
+				content={content} key={i} />)	
 
 		// console.log(this.props.cardListContext)
 		// return content.map((item, i) => {
@@ -65,7 +64,7 @@ class CardList extends React.Component {
 					</span>
 				</div>
 				<div className="CardsList-grid">
-					{/*this.createCards(content, childrenlayout)*/}
+					{this.createCards(content, childrenlayout)}
 				</div>
 			</div>
 		)
