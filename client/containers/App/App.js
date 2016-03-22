@@ -31,7 +31,6 @@ export class App extends Component {
   }
 
   render() {
-    return <div>{'HELLO WORLD'}</div>;
 
     const {app, children, layout, actions, client} = this.props
     const navProps = {actions, client, layout, children}
