@@ -22,21 +22,17 @@ class CategoryCardList extends React.Component {
 	createCards(content, layout) {
 		return content.map((tC, i) => 
 			<CategoryCardPreview layout={layout} 
-				content={content[i]} key={i} cardIndex={{'value': i}}/>)
+				content={content[i]} key={i}/>)
 	}
 
 	render() {
 		const {header, layout, content, childrenlayout} = this.props
-
-		// console.log('CONTENT', content)
-		// console.log('CHILDREN-LAYOUT: ', childrenlayout)
 		const CategoryCardListCN = cn('CategoryCardList', {
 			'--mixgrid': layout.mixgrid,
 			'--noheader': layout.noheader,
 			'--header-left': layout.headerLeft
 		})
 
-		// console.log('CATEGORY-CONTENT: ', content)
 		if (!content) return null
 
 		return (

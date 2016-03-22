@@ -14,10 +14,10 @@ class Home extends React.Component {
   }
 
   render() {
-    const {staffpicks, categories} = this.props
-    // categories, channels, groups
+    const {staffpicks, categories, channels, groups} = this.props
+
     const cardList1 = {
-      context: 'staffpicks',
+      context: 'videos',
       header: {
         image: 'https://f.vimeocdn.com/images_v6/icons/icon_staffpicks_lg.png',
         title: 'Staff Picks', 
@@ -29,7 +29,7 @@ class Home extends React.Component {
     }
 
     const cardList2 = {
-      context: 'staffpicks',
+      context: 'videos',
       header: {
         image: 'https://rachshnier.files.wordpress.com/2015/10/current-buzzfeed.jpg',
         title: 'Trending', 
@@ -43,7 +43,7 @@ class Home extends React.Component {
     }
 
     const cardList3 = {
-      context: 'staffpicks',
+      context: 'channels',
       header: {
         image: 'https://f.vimeocdn.com/images_v6/icons/icon_vod_lg.png',
         title: 'Channels', 
@@ -73,7 +73,7 @@ class Home extends React.Component {
     }
 
     const cardList5 = {
-      context: 'staffpicks',
+      context: 'groups',
       header: {
         image: 'http://icons.iconarchive.com/icons/blackvariant/button-ui-system-folders-alt/512/Group-icon.png',
         title: 'Groups', 
@@ -101,7 +101,7 @@ class Home extends React.Component {
           header={cardList2.header} 
           childrenlayout={cardList2.childrenlayout}/>
 
-        <CardList content={staffpicks.data} 
+        <CardList content={channels.data} 
           cardListContext={cardList3.context}
           header={cardList3.header} 
           childrenlayout={cardList3.childrenlayout}/>
@@ -111,7 +111,7 @@ class Home extends React.Component {
           header={cardList4.header} 
           childrenlayout={cardList4.childrenlayout}/>
 
-        <CardList content={staffpicks.data} 
+        <CardList content={groups.data} 
           cardListContext={cardList5.context}
           header={cardList5.header} 
           childrenlayout={cardList5.childrenlayout}/>
@@ -121,7 +121,3 @@ class Home extends React.Component {
 }
 
 export default Home
-
-// <CardList content={channels} childrenlayout={cardList3.childrenlayout}/>
-// <CardList content={categories} childrenlayout={cardList4.childrenlayout}/>
-// <CardList content={groups} childrenlayout={cardList5.childrenlayout}/>

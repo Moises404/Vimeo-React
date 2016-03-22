@@ -3,7 +3,7 @@ function cleanVideoCards(content) {
 	const contentMap = content.map((item) => {
 		const newItem = {
 			link: item.uri,
-			image: item.pictures.sizes[2].link,
+			image: (item.pictures ? item.pictures.sizes[2].link : 'https://i1.wp.com/i.vimeocdn.com/portrait/default-gray_300x300.png?ssl=1'),
 			title: item.name,
 			subtitle: item.user.name
 		}
@@ -17,7 +17,7 @@ function cleanGroupCards(content) {
 	const contentMap = content.map((item) => {
 		const newItem = {
 			link: item.uri,
-			image: item.pictures.sizes[3].link,
+			image: (item.pictures ? item.pictures.sizes[3].link : 'https://i1.wp.com/i.vimeocdn.com/portrait/default-gray_300x300.png?ssl=1'),
 			title: item.name,
 			subtitle: (item.description ? item.description : '')
 		}
@@ -31,7 +31,7 @@ function cleanChannelCards(content) {
 	const contentMap = content.map((item) => {
 		const newItem = {
 			link: item.uri,
-			image: (item.pictures.sizes[2].link ? 'https://i.ytimg.com/vi/DqS48q6mQSs/maxresdefault.jpg' : item.pictures.sizes[2].link),
+			image: (item.pictures ? item.pictures.sizes[2].link : 'https://i.ytimg.com/vi/DqS48q6mQSs/maxresdefault.jpg'),
 			title: item.name,
 			subtitle: item.user.name
 		}
@@ -45,7 +45,7 @@ function cleanCategoryCards(content) {
 	const contentMap = content.map((item) => {
 		const newItem = {
 			link: item.uri,
-			image: (item.pictures.sizes[2].link ? 'https://i.ytimg.com/vi/DqS48q6mQSs/maxresdefault.jpg' : item.pictures.sizes[2].link),
+			image: (item.pictures ? item.pictures.sizes[2].link : 'https://i.ytimg.com/vi/DqS48q6mQSs/maxresdefault.jpg'),
 			title: item.name,
 			subtitle: item.subcategories[0].name
 		}

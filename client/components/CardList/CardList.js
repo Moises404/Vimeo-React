@@ -2,9 +2,16 @@ import React, {PropTypes} from 'react'
 import {Link} from 'react-router'
 import cn from 'classnames'
 import CardPreview from '../CardPreview/CardPreview'
-// import {standardizeCards} from '../../helpers/standardizeCardData' 
+import {standardizeCards} from '../../helpers/standardizeCardData' 
 
 class CardList extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			standardizedData: standardizeCards(this.props.cardListContext, this.props.content)
+		}
+	}
+
 	static displayName = 'CardList'
 
 	static propTypes = {
@@ -23,24 +30,16 @@ class CardList extends React.Component {
 	}
 
 	createCards(content, layout) {
-		// return content.map((item, i) => 
-		// 	<CardPreview layout={layout} 
-		// 		content={content} key={i} />)	
-
-		// console.log(this.props.cardListContext)
-		return content.map((item, i) => {
-			console.log(item)
-			return <CardPreview layout={layout} 
-				content={item} key={i}/>
-		})	
+		return content.map((item, i) => 
+			<CardPreview layout={layout} 
+				content={item} key={i} />)
 	}
 
 	render() {
-		const {header, layout, content, childrenlayout} = this.props
+		const {header, layout, content, childrenlayout, cardListContext} = this.props
 
-		// const standardizedData = standardizeCards(cardListContext, content)
-		// console.log('STANDARDIZED-DATA: ', standardizedData)
-		// this.setState({standardizedData})
+		const standardizedData = standardizeCards(cardListContext, content)
+		console.log('STANDARDIZED-DATA: ', standardizedData)
 
 		const CardListCN = cn('CardList', {
 			'--mixgrid': layout.mixgrid,
@@ -63,7 +62,7 @@ class CardList extends React.Component {
 					</span>
 				</div>
 				<div className="CardsList-grid">
-					{this.createCards(content, childrenlayout)}
+					{this.createCards(this.state.standardizedData, childrenlayout)}
 				</div>
 			</div>
 		)
