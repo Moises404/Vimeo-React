@@ -31,12 +31,12 @@ export class App extends Component {
   }
 
   render() {
+    return <div>{'HELLO WORLD'}</div>;
+
     const {app, children, layout, actions, client} = this.props
     const navProps = {actions, client, layout, children}
     const childProps = merge(app, client)
     const appClasses = cn('App', `--${client.agent}`)
-
-    console.log('APP-PROPS: ', this.props)
 
     return (
       <div className={appClasses}>

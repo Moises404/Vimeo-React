@@ -25,7 +25,6 @@ router.get('/getDB', (req, res) => {
 		function (callback) {
 			vimeoAPI.request(vimeoTypeToPath['staffpicks'], function (error, body) {
 			    if (error) return callback(error)
-			    console.log(body)
 			    allData.staffpicks = body
 				callback()
 			})

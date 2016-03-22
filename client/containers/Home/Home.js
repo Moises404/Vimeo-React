@@ -15,8 +15,6 @@ class Home extends React.Component {
 
   render() {
     const {staffpicks, categories, channels, groups} = this.props
-
-    console.log('HOME-PROPS: ', this.props)
     // categories, channels, groups
     const cardList1 = {
       context: 'videos',
