@@ -65,7 +65,7 @@ class CardList extends React.Component {
 					</span>
 				</div>
 				<div className="CardsList-grid">
-					{this.createCards(content, childrenlayout)}
+					{/*this.createCards(content, childrenlayout)*/}
 				</div>
 			</div>
 		)
