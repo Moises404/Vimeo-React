@@ -90,7 +90,7 @@ class Home extends React.Component {
       <div className="Home">
         <Carousel content={staffpicks} layout={{'framed': true}}/>
         
-        <CardList 
+        {/*<CardList 
           content={staffpicks.data}
           cardListContext={cardList1.context}
           header={cardList1.header} 
@@ -114,7 +114,7 @@ class Home extends React.Component {
         <CardList content={groups.data} 
           cardListContext={cardList5.context}
           header={cardList5.header} 
-          childrenlayout={cardList5.childrenlayout}/>
+          childrenlayout={cardList5.childrenlayout}/>*/}
       </div>
     )
   }

@@ -15,8 +15,7 @@ export default {
     publicPath: '/'
   },
   module: {
-    preLoaders: 
-    DEBUG ? [
+    preLoaders: DEBUG ? [
       {
         test: /\.js$/,
         loader: 'eslint-loader'
