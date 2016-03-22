@@ -36,10 +36,7 @@ class CardList extends React.Component {
 	}
 
 	render() {
-		const {header, layout, content, childrenlayout, cardListContext} = this.props
-
-		const standardizedData = standardizeCards(cardListContext, content)
-		console.log('STANDARDIZED-DATA: ', standardizedData)
+		const {header, layout, content, childrenlayout} = this.props
 
 		const cardListCN = cn('CardList', {
 			'--mixgrid': layout.mixgrid,

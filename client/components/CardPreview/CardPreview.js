@@ -17,6 +17,8 @@ class CardPreview extends React.Component {
 
 	render() {
 		const {layout, content} = this.props
+
+		// console.log('CARD-PREVIEW-CONTENT: ', content)
 		
 		const cardPreviewCN = cn('CardPreview', {
 			'--full': layout.full,
@@ -51,7 +53,7 @@ class CardPreview extends React.Component {
 					</Link>
 					<span className="CardPreview-user-info">
 						{`from`}
-						<Link className="CardPreview-username" to={`${content.link}`}>
+						<Link className="CardPreview-username" to={`${content.sublink}`}>
 							{`${content.subtitle}`}
 						</Link>
 					</span>

@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react'
 import CardList from '../CardList/CardList'
-// import {find} from 'lodash'
 
 class UserDetail extends React.Component {
 	static displayName = 'UserDetail'
@@ -9,28 +8,16 @@ class UserDetail extends React.Component {
 		'staffpicks': PropTypes.object
 	}
 
-	// static defaultProps = {
-	// 	'user': {}
-	// }
-
-	// getUser(db, id) {
-	//   return find(db, 'url', id )
-	// }
-
 	render() {
 		const {staffpicks} = this.props
-		// console.log('USER-DETAIL-PROPS: ', staffpicks)
 
 		const cardList1 = {
-		  content: staffpicks.data,
 		  layout: {noheader: true},
 		  childrenlayout: {
 		  	full: true,
 		  	fullWidth: true
 		  }
 		}
-
-		// if (!data) return
 
 		return (	
 			<div className="UserDetail">
@@ -76,11 +63,11 @@ class UserDetail extends React.Component {
 								</span>
 							</div>
 							<div className="UserDetail-videos">
-								<CardList 
-								  header= {{}}
-								  content={cardList1.content} 
-								  childrenlayout={cardList1.childrenlayout} 
-								  layout={cardList1.layout}/>
+								<CardList content={staffpicks.data} 
+									layout={cardList1.layout}
+									cardListContext={'videos'}
+									header={{}} 
+									childrenlayout={cardList1.childrenlayout}/>
 							</div>
 						</div>
 					</div>

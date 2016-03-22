@@ -1,11 +1,12 @@
 function cleanVideoCards(content) {
-	console.log('~~~standardizing videos~~~')
+	// console.log('~~~standardizing videos~~~')
 	const contentMap = content.map((item) => {
 		const newItem = {
 			link: item.uri,
 			image: (item.pictures ? item.pictures.sizes[2].link : 'https://i1.wp.com/i.vimeocdn.com/portrait/default-gray_300x300.png?ssl=1'),
 			title: item.name,
-			subtitle: item.user.name
+			subtitle: item.user.name,
+			sublink: (item.user.uri ? item.user.uri : item.uri)
 		}
 		return newItem
 	})
@@ -13,13 +14,14 @@ function cleanVideoCards(content) {
 }
 
 function cleanGroupCards(content) {
-	console.log('~~~standardizing groups~~~')
+	// console.log('~~~standardizing groups~~~')
 	const contentMap = content.map((item) => {
 		const newItem = {
 			link: item.uri,
 			image: (item.pictures ? item.pictures.sizes[3].link : 'https://i1.wp.com/i.vimeocdn.com/portrait/default-gray_300x300.png?ssl=1'),
 			title: item.name,
-			subtitle: (item.description ? item.description : '')
+			subtitle: (item.description ? item.description : ''),
+			sublink: (item.user.uri ? item.user.uri : item.uri)
 		}
 		return newItem
 	})
@@ -27,13 +29,14 @@ function cleanGroupCards(content) {
 }
 
 function cleanChannelCards(content) {
-	console.log('~~~standardizing channels~~~')
+	// console.log('~~~standardizing channels~~~')
 	const contentMap = content.map((item) => {
 		const newItem = {
 			link: item.uri,
 			image: (item.pictures ? item.pictures.sizes[2].link : 'https://i.ytimg.com/vi/DqS48q6mQSs/maxresdefault.jpg'),
 			title: item.name,
-			subtitle: item.user.name
+			subtitle: item.user.name,
+			sublink: (item.user.uri ? item.user.uri : item.uri)
 		}
 		return newItem
 	})
@@ -41,13 +44,14 @@ function cleanChannelCards(content) {
 }
 
 function cleanCategoryCards(content) {
-	console.log('~~~standardizing categories~~~')
+	// console.log('~~~standardizing categories~~~')
 	const contentMap = content.map((item) => {
 		const newItem = {
 			link: item.uri,
 			image: (item.pictures ? item.pictures.sizes[2].link : 'https://i.ytimg.com/vi/DqS48q6mQSs/maxresdefault.jpg'),
 			title: item.name,
-			subtitle: item.subcategories[0].name
+			subtitle: item.subcategories[0].name,
+			sublink: (item.user.uri ? item.user.uri : item.uri)
 		}
 		return newItem
 	})
@@ -57,6 +61,7 @@ function cleanCategoryCards(content) {
 export function standardizeCards(context, content) {
 	let newContent
 
+	console.log('STANDARDIZING-CONTEXT: ', context)
 	switch (context) {
 		case 'videos':
 			newContent = cleanVideoCards(content)
