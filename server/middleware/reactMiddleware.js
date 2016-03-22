@@ -50,7 +50,9 @@ export default function reactMiddleware (req, res) {
 
     if (!req.cookies[cookieName]) res.cookie(cookieName, defaultCookie)
 
+
     return store.dispatch(hydrateInitialStore(req)).then(() => {
+      console.log('HYDRATE INTIAL STORE WORKED')
       const initialState = stringifyJSON(store.getState())
       const content = renderToString(
         <Provider store={store}>

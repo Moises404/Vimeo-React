@@ -37,6 +37,7 @@ if (DEBUG) {
   }))
   server.use(webpackHotMiddleware(compiler))
 } else {
+  console.log('ELSE SERVER.JS')
   server.use(express.static(path.resolve(__dirname, '../build')))
   server.use(morgan('combined'))
 }

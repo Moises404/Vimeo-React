@@ -1,3 +1,5 @@
+console.log('SERVER INDEX.jS')
+
 // sets environment variables
 if (process.env.NODE_ENV !== 'production') {
 	try {
@@ -14,3 +16,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 require('babel-register')
 require('./server')
+
+
+console.log('SERVER INDEX.jS --END')
