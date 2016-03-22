@@ -101,17 +101,17 @@ class Home extends React.Component {
           header={cardList2.header} 
           childrenlayout={cardList2.childrenlayout}/>
 
-        <CardList content={channels.data} 
+        <CardList content={staffpicks.data} 
           cardListContext={cardList3.context}
           header={cardList3.header} 
           childrenlayout={cardList3.childrenlayout}/>
 
-        <CategoryCardList content={categories.data}
+        <CategoryCardList content={staffpicks.data}
           cardListContext={cardList4.context}
           header={cardList4.header} 
           childrenlayout={cardList4.childrenlayout}/>
 
-        <CardList content={groups.data} 
+        <CardList content={staffpicks.data} 
           cardListContext={cardList5.context}
           header={cardList5.header} 
           childrenlayout={cardList5.childrenlayout}/>
