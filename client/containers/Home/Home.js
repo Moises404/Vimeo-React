@@ -14,10 +14,10 @@ class Home extends React.Component {
   }
 
   render() {
-    const {staffpicks, categories, channels, groups} = this.props
+    const {staffpicks, categories} = this.props
     // categories, channels, groups
     const cardList1 = {
-      context: 'videos',
+      context: 'staffpicks',
       header: {
         image: 'https://f.vimeocdn.com/images_v6/icons/icon_staffpicks_lg.png',
         title: 'Staff Picks', 
@@ -29,7 +29,7 @@ class Home extends React.Component {
     }
 
     const cardList2 = {
-      context: 'videos',
+      context: 'staffpicks',
       header: {
         image: 'https://rachshnier.files.wordpress.com/2015/10/current-buzzfeed.jpg',
         title: 'Trending', 
@@ -43,7 +43,7 @@ class Home extends React.Component {
     }
 
     const cardList3 = {
-      context: 'channels',
+      context: 'staffpicks',
       header: {
         image: 'https://f.vimeocdn.com/images_v6/icons/icon_vod_lg.png',
         title: 'Channels', 
@@ -73,7 +73,7 @@ class Home extends React.Component {
     }
 
     const cardList5 = {
-      context: 'groups',
+      context: 'staffpicks',
       header: {
         image: 'http://icons.iconarchive.com/icons/blackvariant/button-ui-system-folders-alt/512/Group-icon.png',
         title: 'Groups', 
@@ -106,7 +106,7 @@ class Home extends React.Component {
           header={cardList3.header} 
           childrenlayout={cardList3.childrenlayout}/>
 
-        <CategoryCardList content={staffpicks.data}
+        <CategoryCardList content={categories.data}
           cardListContext={cardList4.context}
           header={cardList4.header} 
           childrenlayout={cardList4.childrenlayout}/>

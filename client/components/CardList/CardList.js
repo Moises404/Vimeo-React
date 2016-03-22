@@ -23,17 +23,16 @@ class CardList extends React.Component {
 	}
 
 	createCards(content, layout) {
-		return content.map((item, i) => 
-			<CardPreview layout={layout} 
-				content={content} key={i} />)	
+		// return content.map((item, i) => 
+		// 	<CardPreview layout={layout} 
+		// 		content={content} key={i} />)	
 
 		// console.log(this.props.cardListContext)
-		// return content.map((item, i) => {
-		// 	console.log(item)
-		// 	return <CardPreview layout={layout} 
-		// 		content={item} key={i} 
-		// 		cardContext={{'index': i, 'context': 'staffpicks'}}/>
-		// })	
+		return content.map((item, i) => {
+			console.log(item)
+			return <CardPreview layout={layout} 
+				content={item} key={i}/>
+		})	
 	}
 
 	render() {

@@ -38,6 +38,7 @@ export function fetchVimeoSuccess(json) {
 export function fetchFire() {
   const API = process.env.API || apiLocal
 
+  
   return (dispatch) => (
     fetch(`${API}/getDB`)
       .then((response) => response.json())
